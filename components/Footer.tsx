@@ -1,11 +1,14 @@
 import Link from "next/link";
+import { playfair } from "@/lib/fonts/fonts";
 
 export default function Footer() {
   return (
     <footer className="bg-[#C6A85C] text-white px-6 py-4">
       <div className="max-w-5xl mx-auto flex flex-col items-center space-y-3">
         <div className="text-center">
-          <p className="text-base mb-2">Connect with us</p>
+          <p className={`text-base mb-2 ${playfair.className}`}>
+            Connect with me
+          </p>
           <Link
             href="https://www.instagram.com/yoga_teti?igsh=MXU5dzZqdXh3aXlu"
             target="_blank"
