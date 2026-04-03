@@ -8,14 +8,14 @@ export default function EventsPage() {
       image: "/images/workshops.jpg",
       title: "Workshops",
       button: "View Workshops",
-      link: "/workshops",
+      link: "/events/workshops",
     },
     {
       id: "retreats",
       image: "/images/retreats.jpg",
       title: "Retreats",
       button: "View Retreats",
-      link: "/retreats",
+      link: "/events/retreats",
     },
     {
       id: "one-to-one",
