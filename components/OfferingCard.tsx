@@ -17,7 +17,7 @@ export default function OfferingCard({
           {title}
         </div>
       </div>
-      <div className="max-h-0 overflow-hidden bg-white group-hover:max-h-40 transition-all duration-500">
+      <div className="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500">
         <p className="p-4 text-base text-gray-600 text-center">{description}</p>
       </div>
     </div>
