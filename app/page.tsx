@@ -42,7 +42,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/schedule"
-            className={`${playfair.className} inline-block bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold text-lg hover:bg-gray-700 transition`}
+            className={`${playfair.className} inline-block bg-stone-700 text-white px-6 py-3 rounded-lg font-semibold text-lg hover:bg-stone-600 transition`}
           >
             Explore my schedule
           </Link>
