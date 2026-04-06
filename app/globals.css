@@ -27,15 +27,6 @@ body {
   }
 }
 
-@keyframes zoomIn {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.05);
-  }
-}
-
 .animate-zoom-in {
   animation: zoomIn 1s ease-out forwards;
 }

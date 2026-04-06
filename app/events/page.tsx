@@ -50,7 +50,7 @@ export default function EventsPage() {
                 <h2 className="mt-5 text-lg font-semibold">{item.title}</h2>
                 <Link
                   href={item.link}
-                  className="mt-6 mb-6 px-6 py-2 border border-gray-800 rounded-full text-sm hover:bg-gray-800 hover:text-white transition"
+                  className="mt-6 mb-6 px-6 py-2 border border-gray-800 rounded-full text-sm hover:bg-stone-600 hover:text-white transition"
                 >
                   {item.button}
                 </Link>
