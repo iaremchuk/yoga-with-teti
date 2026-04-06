@@ -36,7 +36,7 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header className="bg-white text-neutral-800 border-b relative z-50">
+    <header className="bg-white text-neutral-800 relative z-50">
       <nav className="container mx-auto flex justify-between items-center p-4">
         <h1 className={playfair.className}>
           <Link

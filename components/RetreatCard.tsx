@@ -1,4 +1,4 @@
-import type { Retreat } from "@/types/retreat";
+import type { Retreat } from "../app/types/retreat";
 import { urlFor } from "@/lib/utils/image";
 import { formatDateRange } from "@/lib/utils/date";
 

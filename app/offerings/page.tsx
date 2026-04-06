@@ -28,7 +28,7 @@ export default function OfferingsPage() {
 
   return (
     <main className="min-h-screen flex flex-col">
-      <section className="flex-1 py-16 px-6 bg-white text-gray-800">
+      <section className="flex-1 py-16 px-6 bg-[#f5f1eb] text-gray-800">
         <div className="max-w-6xl mx-auto">
           <h1
             className={`${playfair.className} text-3xl md:text-4xl font-bold text-center mb-12`}
