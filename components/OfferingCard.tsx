@@ -1,3 +1,6 @@
+"use client";
+import { useState } from "react";
+
 type OfferingCardProps = {
   image: string;
   title: string;
@@ -9,16 +12,27 @@ export default function OfferingCard({
   title,
   description,
 }: OfferingCardProps) {
+  const [expanded, setExpanded] = useState(false);
+  const shortText = description.slice(0, 290);
+
   return (
-    <div className="group">
+    <div className="group flex flex-col">
       <div className="relative overflow-hidden rounded-lg">
-        <img src={image} className="w-full h-[450px] object-cover" />
-        <div className="absolute bottom-0 w-full text-white text-center py-3">
+        <img src={image} alt={title} className="w-full h-[450px] object-cover" />
+        <div className="absolute bottom-0 w-full text-white text-center py-3 bg-black/40">
           {title}
         </div>
       </div>
-      <div className="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500">
-        <p className="p-4 text-base text-gray-600 text-center">{description}</p>
+      <div className="flex flex-col">
+        <p className="p-4 text-base text-gray-600 text-center">
+          {expanded ? description : `${shortText}...`}
+        </p>
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="pb-4 text-sm text-gray-500 underline mt-auto"
+        >
+          {expanded ? "Show less" : "Read more"}
+        </button>
       </div>
     </div>
   );
