@@ -3,7 +3,7 @@ import { playfair } from "@/lib/fonts/fonts";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#C6A85C] text-white px-6 py-4">
+    <footer className="bg-[#7A8F7C] text-white px-6 py-4">
       <div className="max-w-5xl mx-auto flex flex-col items-center space-y-3">
         <div className="text-center">
           <p className={`text-base mb-2 ${playfair.className}`}>
