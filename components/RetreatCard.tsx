@@ -43,7 +43,7 @@ export default function RetreatCard({
               aria-label={`Book ${retreat.title} retreat`}
               className="w-fit mx-auto px-6 py-3 bg-[#7A8F7C] text-white rounded-full hover:bg-[#596B59] transition shadow-sm hover:shadow-md"
             >
-              Book Now
+              Learn more & book
             </a>
           )}
         </div>
