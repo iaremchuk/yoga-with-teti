@@ -1,11 +1,10 @@
-import { createClient } from "@sanity/client";
-import type { ClientConfig, SanityClient } from "@sanity/client";
+import { createClient } from "next-sanity";
 
-const config: ClientConfig = {
+const config = {
   projectId: "omv1a8c0",
   dataset: "production",
   apiVersion: "2026-03-23",
   useCdn: true,
 };
 
-export const client: SanityClient = createClient(config);
+export const client = createClient(config);
