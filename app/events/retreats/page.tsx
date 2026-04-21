@@ -1,7 +1,9 @@
+export const revalidate = 60;
+
 import { playfair } from "@/lib/fonts/fonts";
 import { client } from "@/lib/sanity/sanity";
 import { isFutureDate } from "@/lib/utils/date";
-import type { Retreat } from "@/types/retreat";
+import type { Retreat } from "../../types/retreat";
 import RetreatCard from "@/components/RetreatCard";
 
 async function getRetreats(): Promise<Retreat[]> {
@@ -16,7 +18,7 @@ async function getRetreats(): Promise<Retreat[]> {
     image
   }`;
 
-  return client.fetch<Retreat[]>(query, {}, { next: { revalidate: 60 } });
+  return (client.fetch as any)(query) as Promise<Retreat[]>;
 }
 
 export default async function RetreatsPage() {
@@ -56,7 +58,9 @@ export default async function RetreatsPage() {
           </section>
         ) : (
           <div className="text-center py-20 text-gray-500">
-            <p className="text-lg italic">New retreats are coming soon.</p>
+            <p className="text-lg italic">
+              We are preparing new retreat experiences.
+            </p>
           </div>
         )}
         {past.length > 0 && (
