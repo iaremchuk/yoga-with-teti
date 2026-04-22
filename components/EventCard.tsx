@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Event } from "../app/types/event";
+import type { Event } from "@/types/event";
 
 export default function EventCard({ image, title, button, link }: Event) {
   return (

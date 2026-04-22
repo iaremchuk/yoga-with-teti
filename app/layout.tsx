@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { inter } from "@/lib/fonts/fonts";
+import { inter } from "@/fonts/fonts";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 

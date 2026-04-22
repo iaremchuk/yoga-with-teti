@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { playfair } from "@/lib/fonts/fonts";
+import { playfair } from "@/fonts/fonts";
 
 const navLinks = [
   { href: "/", label: "Home" },

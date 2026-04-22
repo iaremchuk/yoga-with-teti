@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { playfair } from "@/lib/fonts/fonts";
+import { playfair } from "@/fonts/fonts";
 
 export default function Footer() {
   return (

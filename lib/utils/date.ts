@@ -14,6 +14,10 @@ const dateFormatter = new Intl.DateTimeFormat("en-GB", {
   year: "numeric",
 });
 
+export function formatDate(date: string) {
+  return dateFormatter.format(new Date(date));
+}
+
 export function formatDateRange(start: string, end: string) {
   return `${dateFormatter.format(new Date(start))} – ${dateFormatter.format(
     new Date(end)
