@@ -1,12 +1,13 @@
 export const revalidate = 60;
 
-import { playfair } from "@/lib/fonts/fonts";
+import { playfair } from "@/fonts/fonts";
 import { client } from "@/lib/sanity/sanity";
 import { isFutureDate } from "@/lib/utils/date";
-import type { Retreat } from "../../types/retreat";
-import RetreatCard from "@/components/RetreatCard";
+import type { Experience } from "@/types/experience";
+import ExperienceCard from "@/components/ExperienceCard";
+import BackButton from "@/components/BackButton";
 
-async function getRetreats(): Promise<Retreat[]> {
+async function getRetreats(): Promise<Experience[]> {
   const query = `*[_type == "retreat"] | order(startDate asc){
     _id,
     title,
@@ -17,18 +18,16 @@ async function getRetreats(): Promise<Retreat[]> {
     bookingLink,
     image
   }`;
-
-  return (client.fetch as any)(query) as Promise<Retreat[]>;
+  return (client.fetch as any)(query) as Promise<Experience[]>;
 }
 
 export default async function RetreatsPage() {
   const retreats = await getRetreats();
-
-  const upcoming: Retreat[] = [];
-  const past: Retreat[] = [];
+  const upcoming: Experience[] = [];
+  const past: Experience[] = [];
 
   for (const retreat of retreats) {
-    if (isFutureDate(retreat.startDate)) {
+    if (retreat.startDate && isFutureDate(retreat.startDate)) {
       upcoming.push(retreat);
     } else {
       past.push(retreat);
@@ -38,6 +37,7 @@ export default async function RetreatsPage() {
   return (
     <main className="min-h-screen py-16 px-6 bg-[#f5f1eb] text-gray-800">
       <div className="max-w-4xl mx-auto">
+        <BackButton href="/events" label="Back to Events" />
         <h1
           className={`${playfair.className} text-3xl md:text-4xl font-bold text-center mb-12`}
         >
@@ -50,9 +50,9 @@ export default async function RetreatsPage() {
             >
               Upcoming Retreats
             </h2>
-            <div className="space-y-6">
-              {upcoming.map((r) => (
-                <RetreatCard key={r._id} retreat={r} isUpcoming />
+            <div className="space-y-8">
+              {upcoming.map((r, index) => (
+                <ExperienceCard key={r._id} data={r} isUpcoming index={index} />
               ))}
             </div>
           </section>
@@ -70,9 +70,14 @@ export default async function RetreatsPage() {
             >
               Previous Retreats
             </h2>
-            <div className="space-y-6">
-              {past.map((r) => (
-                <RetreatCard key={r._id} retreat={r} isUpcoming={false} />
+            <div className="space-y-8">
+              {past.map((r, index) => (
+                <ExperienceCard
+                  key={r._id}
+                  data={r}
+                  isUpcoming={false}
+                  index={index}
+                />
               ))}
             </div>
           </section>

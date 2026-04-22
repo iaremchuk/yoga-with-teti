@@ -1,4 +1,4 @@
-import { playfair } from "@/lib/fonts/fonts";
+import { playfair } from "@/fonts/fonts";
 import Link from "next/link";
 
 export default function HomePage() {

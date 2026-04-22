@@ -1,4 +1,4 @@
-import { playfair } from "@/lib/fonts/fonts";
+import { playfair } from "@/fonts/fonts";
 import OfferingCard from "@/components/OfferingCard";
 
 export default function OfferingsPage() {

@@ -1,14 +1,14 @@
-import { playfair } from "@/lib/fonts/fonts";
+import { playfair } from "@/fonts/fonts";
 import EventCard from "@/components/EventCard";
 
 export default function EventsPage() {
   const events = [
     {
-      id: "workshops",
-      image: "/images/workshops.jpg",
-      title: "Workshops",
-      button: "View Workshops",
-      link: "/events/workshops",
+      id: "practices",
+      image: "/images/practices.jpg",
+      title: "Practices",
+      button: "View Practices",
+      link: "/events/practices",
     },
     {
       id: "retreats",
@@ -22,7 +22,7 @@ export default function EventsPage() {
       image: "/images/one-to-one.jpg",
       title: "One to One Sessions",
       button: "Email Me",
-      link: "mailto:tanianago@gmail.com",
+      link: "mailto:yogawithtania.om@gmail.com",
     },
   ];
 

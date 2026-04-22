@@ -1,31 +1,22 @@
-import { playfair } from "@/lib/fonts/fonts";
-import { client } from "@/lib/sanity/sanity";
-
 export const revalidate = 60;
 
-type Blog = {
-  _id: string;
-  title: string;
-  publishedAt?: string;
-  excerpt?: string;
-};
+import { playfair } from "@/fonts/fonts";
+import { client } from "@/lib/sanity/sanity";
+import type { Blog } from "@/types/blog";
+import { formatDate } from "@/lib/utils/date";
+
+async function getBlogs(): Promise<Blog[]> {
+  const query = `*[_type == "blog"] | order(publishedAt desc) {
+    _id,
+    title,
+    publishedAt,
+    excerpt
+  }`;
+  return (client.fetch as any)(query) as Promise<Blog[]>;
+}
 
 export default async function BlogPage() {
-  const blogs: Blog[] = await client.fetch(`
-    *[_type == "blog"] | order(publishedAt desc) {
-      _id,
-      title,
-      publishedAt,
-      excerpt
-    }
-  `);
-
-  const formatDate = (date: string) =>
-    new Date(date).toLocaleDateString("en-GB", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    });
+  const blogs = await getBlogs();
 
   return (
     <main className="min-h-screen py-16 px-6 bg-[#f5f1eb] text-gray-800">
