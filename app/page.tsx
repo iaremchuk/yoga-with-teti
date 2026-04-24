@@ -1,65 +1,53 @@
-import Image from "next/image";
+import { playfair } from "@/fonts/fonts";
+import Link from "next/link";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen flex flex-col">
+      <section
+        className="flex items-center justify-center h-[60vh] bg-cover bg-center relative"
+        style={{ backgroundImage: "url('/images/home-page.jpg')" }}
+      ></section>
+      <section className="flex-1 py-16 px-6 bg-white text-gray-800">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className={`text-4xl font-bold mb-6 ${playfair.className}`}>
+            About me
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-base mb-6">
+            My name is Teti, and I am a yoga teacher with over 800 hours of
+            training. The styles I teach include Dharma, Vinyasa, Yin,
+            Restorative, and Yoga Nidra. I have been practicing yoga for over 10
+            years.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <p className="text-base mb-6">
+            In the midst of the Covid-19 lockdowns, I decided to deepen my
+            understanding of yoga and completed a 200-hour teacher training,
+            after which I began teaching and have continued ever since. I felt a
+            strong calling to share the practices that support a full, nourished
+            life. Since my first training, I have remained deeply dedicated to
+            yoga, maintaining a daily personal practice and continuing my
+            education through various courses. These have allowed me to deepen
+            my understanding of the styles that resonate with me and to develop
+            skills that best serve my community.
+          </p>
+          <p className="text-base mb-10">
+            With deep reverence and respect for the origins and philosophy of
+            yoga, I love creating yoga experiences that weave together
+            traditional yoga teachings and breathwork with developmental
+            movement, neuroscience, and mindfulness practices, making them
+            relevant for modern life. My classes are dynamic yet accessible to
+            all levels. They incorporate restorative elements, pranayama, and
+            meditation, guiding students toward balance in body, mind, and
+            spirit.
+          </p>
+          <Link
+            href="/schedule"
+            className={`${playfair.className} inline-block bg-stone-700 text-white px-6 py-3 rounded-lg font-semibold text-lg hover:bg-stone-600 transition`}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            Explore my schedule
+          </Link>
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
