@@ -4,11 +4,11 @@ import EventCard from "@/components/EventCard";
 export default function EventsPage() {
   const events = [
     {
-      id: "practices",
-      image: "/images/practices.jpg",
-      title: "Practices",
-      button: "View Practices",
-      link: "/events/practices",
+      id: "upcomingEvents",
+      image: "/images/upcoming-events.jpg",
+      title: "Coming Up",
+      button: "What's On",
+      link: "/events/upcomingEvents",
     },
     {
       id: "retreats",
@@ -33,7 +33,7 @@ export default function EventsPage() {
           <h1
             className={`${playfair.className} text-3xl md:text-4xl font-bold text-center mb-12`}
           >
-            Events
+            Upcoming Events
           </h1>
           <div className="grid md:grid-cols-3 gap-10">
             {events.map((item) => (

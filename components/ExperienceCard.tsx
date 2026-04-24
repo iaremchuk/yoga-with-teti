@@ -18,11 +18,15 @@ export default function ExperienceCard({ data, isUpcoming, index = 0 }: Props) {
         }`}
       >
         {data.image && (
-          <div className="md:w-1/2">
+          <div className="md:w-1/2 flex justify-center items-center p-4">
             <img
-              src={urlFor(data.image).width(400).height(500).auto("format").url()}
+              src={urlFor(data.image)
+                .width(400)
+                .height(400)
+                .auto("format")
+                .url()}
               alt={data.title || "Image"}
-              className="w-full h-full object-contain"
+              className="w-full max-w-[400px] h-[400px] object-cover rounded-xl shadow-md"
             />
           </div>
         )}
@@ -38,7 +42,7 @@ export default function ExperienceCard({ data, isUpcoming, index = 0 }: Props) {
               <p className="text-sm text-gray-500 mb-4">{data.location}</p>
             )}
             {data.description && (
-              <p className="text-gray-700 mb-6 leading-relaxed">
+              <p className="text-gray-700 mb-6 leading-relaxed text-left">
                 {data.description}
               </p>
             )}
@@ -50,7 +54,7 @@ export default function ExperienceCard({ data, isUpcoming, index = 0 }: Props) {
               rel="noopener noreferrer"
               className="w-fit mx-auto px-6 py-3 bg-[#7A8F7C] text-white rounded-full hover:bg-[#596B59] transition shadow-sm hover:shadow-md"
             >
-              Learn more & book
+              Learn More & Book
             </a>
           )}
         </div>
